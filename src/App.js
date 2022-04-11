@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import React,{useCallback,useEffect,useState} from 'react';
+import VideoLooper from 'react-video-looper';
+import sampleVideo from './vid.mp4';
 function App() {
+  const handle = useFullScreenHandle();
+  
+  // useEffect(() => {
+  //   handle.enter();
+  // });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <FullScreen handle={handle}>
+      <VideoLooper source={sampleVideo} start={0} end={57} style={{position:'absolute'}}/>
+      </FullScreen>
+      <button onClick={handle.enter} style={{position:'absolute'}}>
+        Enter fullscreen
+      </button>
+
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
