@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+It's not possible to do auto fullscreen for security reasons accessing full screen requires the user's "permission", and so is tied to browser input events.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
